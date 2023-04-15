@@ -32,4 +32,13 @@ public class ArrayExcercisesTest {
         List<Integer> actual = arrayExcercises.findDuplicatesConstantSpace(unsorted);
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void testQuickSortArray() {
+        int[] unsorted = {10, 2,2,1,9};
+        Integer [] sorted = new Integer[]{ 1,2,2,9,10};
+        List<Integer> expected = Arrays.asList(sorted);
+        List<Integer> actual = arrayExcercises.sortUsingQuickSort(unsorted);
+        assertEquals(actual, expected);
+    }
 }
