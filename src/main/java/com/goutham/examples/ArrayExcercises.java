@@ -114,5 +114,15 @@ public class ArrayExcercises
         arr[index2] = temp;
     }
 
+    public boolean isPalindromeString(String value){
+        char[] valueArray = value.toCharArray();
+        for ( int i = 0 ,j= value.length()-1 ; i<j ; i++,j--){
+            if( valueArray[i]!=valueArray[j]){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }

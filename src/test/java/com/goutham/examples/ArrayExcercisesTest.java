@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -40,5 +40,12 @@ public class ArrayExcercisesTest {
         List<Integer> expected = Arrays.asList(sorted);
         List<Integer> actual = arrayExcercises.sortUsingQuickSort(unsorted);
         assertEquals(actual, expected);
+    }
+    @Test
+    public void testPalindrome(){
+
+        assertFalse( arrayExcercises.isPalindromeString("Hello"));
+        assertTrue( arrayExcercises.isPalindromeString("HabccbaH"));
+
     }
 }
