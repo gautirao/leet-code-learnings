@@ -17,6 +17,7 @@ public class ArrayExcercises {
 
     // assume ; values do not exceed size of array and are positive
     // hint the value of the item can be a index of the array , iterate each element get the index value by substracting by 1
+    // set the value as negative , if we come across the item as negative then we know it is duplicated
     public List<Integer> findDuplicatesConstantSpace(int[] unsorted) {
         List<Integer> duplicateItems = new ArrayList<>();
         for (int i = 0; i < unsorted.length; i++) {
