@@ -48,4 +48,12 @@ public class ArrayExcercisesTest {
         assertTrue( arrayExcercises.isPalindromeString("HabccbaH"));
 
     }
+
+    @Test
+    public void testBinarySearch(){
+            int[] array = {1,2,3,4};
+      assertEquals(1,arrayExcercises.search(array,2));
+      assertEquals(-1,arrayExcercises.search(array,20));
+
+    }
 }
