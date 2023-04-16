@@ -54,9 +54,10 @@ public class LinkedList {
             System.out.println("List is empty");
         }
         Node current = head;
+        System.out.println(current.data);
         while(current.next != null){
-            System.out.println(current.data);
             current = current.next;
+            System.out.println(current.data);
         }
 
     }
@@ -88,6 +89,23 @@ public class LinkedList {
         }
         slowPointer.next = slowPointer.next.next;
 
+    }
+
+    public void  reverse(){
+        Node previous = null;
+        Node current = head;
+        Node next = head;
+        //  a  ->  b  ->  c  ->  d  ->  e  ->  f  -> null
+// init   cur
+//   prev next
+        while(current != null ){
+            next = next.next;
+            current.next = previous;
+            previous  = current;
+            current = next;
+        }
+        //return the head now
+        head =  previous;
     }
 
     public List<Integer> getAllData(){

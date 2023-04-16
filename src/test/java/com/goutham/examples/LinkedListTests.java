@@ -56,4 +56,18 @@ public class LinkedListTests {
         assertNotEquals(expected,actual);
 
     }
+    @Test
+    public void testReversal() {
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.reverse();
+        List expected = Arrays.asList(5,4,3,2,1);
+        List actual = list.getAllData();
+        list.printAll();
+        assertEquals(expected,actual);
+
+    }
 }
