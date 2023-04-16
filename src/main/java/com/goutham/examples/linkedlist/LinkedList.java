@@ -121,4 +121,40 @@ public class LinkedList {
         }
         return data;
     }
+
+    public void createCyleAtNthNode ( int position){
+        // 2 -> 4 -> 5 -> 6--I
+        //       ^-----------I
+        // given position = 2
+
+        Node current = head;
+        Node cycleNode = null;
+        int count = 1 ;
+        while ( count < position ){
+            current = current.next;
+            count ++;
+        }
+        cycleNode = current;
+
+        while(current != null && current.next != null){
+            current= current.next;
+        }
+
+        current.next = cycleNode;
+    }
+    // logic is evetuallly fast pointer catches up with the slow pointer
+    public boolean hasCycle(Node head){
+        Node fastPointer =head , slowPointer = head;
+
+        while( (fastPointer != null) && (fastPointer.next != null)){
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+
+            if(slowPointer == fastPointer){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

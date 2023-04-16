@@ -1,6 +1,7 @@
 package com.goutham.examples;
 
 import com.goutham.examples.linkedlist.LinkedList;
+import com.goutham.examples.linkedlist.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -68,6 +69,43 @@ public class LinkedListTests {
         List actual = list.getAllData();
         list.printAll();
         assertEquals(expected,actual);
+
+    }
+
+
+    @Test
+    public void testCycle(){
+        // 2 -> 4 -> 5 -> 6--I
+        //       ^-----------I
+
+
+
+        LinkedList list =new LinkedList();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(6);
+        list.createCyleAtNthNode(2);
+
+        assertTrue(list.hasCycle(list.head));
+
+
+    }
+
+    public void testCycleNegativeScenario(){
+        // 2 -> 4 -> 5 -> 6
+
+        LinkedList list =new LinkedList();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(6);
+
+        assertFalse(list.hasCycle(list.head));
 
     }
 }
