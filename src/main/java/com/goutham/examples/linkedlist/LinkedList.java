@@ -6,6 +6,13 @@ import java.util.List;
 public class LinkedList {
     public Node head;
 
+    public LinkedList() {
+    }
+
+    public LinkedList(Node head) {
+        this.head = head;
+    }
+
     public void append(int data){
         // if list is empty start with the head node
         if (head == null){
@@ -156,5 +163,41 @@ public class LinkedList {
         }
 
         return false;
+    }
+
+    public LinkedList addTwoLists(LinkedList l1 , LinkedList l2){
+        Node head1 = l1.head;
+        Node head2 = l2.head;
+
+        //  [ 1 ,5 ,7]
+        //  [ 9, 1, 4]
+        //op [ 0, 7, 1, 1]
+        Node dummy = new Node(0);
+        Node  curr = dummy; // point the current to dummy
+        int carry = 0 ; // variable used to carry over
+
+        // traverse the nodes until l1 or l2 != null and carry forward has some value in it
+        while ( head1 != null || head2 != null || carry > 0){
+            int sum = 0;
+            if(head1!= null){
+                sum += head1.data;
+                head1= head1.next;
+            }
+            if(head2 != null){
+                sum+=head2.data;
+                head2= head2.next;
+            }
+            // add the previous carry if there is to the total
+            sum+= carry;
+
+            carry = sum / 10; // this should be the value that needs to be carry forwarded
+
+            Node newNode = new Node(sum % 10);
+            curr.next = newNode;
+            curr = curr.next;
+        }
+
+
+        return new LinkedList( dummy.next);
     }
 }

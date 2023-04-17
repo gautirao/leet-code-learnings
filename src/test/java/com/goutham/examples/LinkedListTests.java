@@ -93,7 +93,7 @@ public class LinkedListTests {
 
 
     }
-
+    @Test
     public void testCycleNegativeScenario(){
         // 2 -> 4 -> 5 -> 6
 
@@ -108,4 +108,23 @@ public class LinkedListTests {
         assertFalse(list.hasCycle(list.head));
 
     }
+
+    @Test
+    public void addTwoLists(){
+        LinkedList list1 =new LinkedList();
+        list1.append(1);
+        list1.append(2);
+        list1.append(3);
+
+        LinkedList list2 =new LinkedList();
+        list2.append(9);
+        list2.append(2);
+        list2.append(7);
+
+        List expected = Arrays.asList(0,5,0,1);
+        LinkedList result = list1.addTwoLists(list1, list2);
+        result.getAllData().forEach(System.out::println);
+        assertEquals(result.getAllData(),expected);
+    }
+
 }
