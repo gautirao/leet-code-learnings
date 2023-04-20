@@ -1,6 +1,6 @@
 package com.goutham.examples.graphs;
 
-public class Main {
+public class MatrixGraphDemo {
     /*
      *   unidrected graph        A->B->C->D->A
      *  the graph can represented by 4X4 matrix , 1 indicates an edge between two nodes , else 0
