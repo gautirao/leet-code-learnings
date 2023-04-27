@@ -25,6 +25,13 @@ public class AdjacencyGraph {
     }
 
     public boolean checkEdge(int src, int dest){
+        /**
+         * get the linked list at source pointer
+         * get the head node from the linked list in the destination pointer
+         * iterate over the linked list at source and check if the head is present.
+         * if yes then the src and destination are linked
+         */
+
         LinkedList<GraphNode> srcList = adjacencyList.get(src);
         GraphNode headNodeAtDestination = adjacencyList.get(dest).get(0);
         for(GraphNode node : srcList){
