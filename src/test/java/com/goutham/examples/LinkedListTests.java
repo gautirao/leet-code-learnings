@@ -1,14 +1,13 @@
 package com.goutham.examples;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.goutham.examples.linkedlist.LinkedList;
-import com.goutham.examples.linkedlist.Node;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 public class LinkedListTests {
     private LinkedList list ;
 
