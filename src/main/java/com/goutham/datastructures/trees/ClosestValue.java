@@ -27,8 +27,8 @@ Closest value: 13
 * */
 public class ClosestValue {
 
-  public static int findClosestValueInBst(TreeNode tree, int target) {
-    return findClosestValueInBst(tree, target, tree.val);
+  public static int findClosestValueInBst(TreeNode node, int target) {
+    return findClosestValueInBst(node, target, node.val);
   }
 
   /*
@@ -38,14 +38,14 @@ public class ClosestValue {
   If target > current.value, go right.
   Else, return closest.
       * */
-  private static int findClosestValueInBst(TreeNode tree, int target, int closest) {
-    if (Math.abs(target - closest) > Math.abs(target - tree.val)) {
-      closest = tree.val;
+  private static int findClosestValueInBst(TreeNode node, int target, int closest) {
+    if (Math.abs(target - closest) > Math.abs(target - node.val)) {
+      closest = node.val;
     }
-    if (target < tree.val && tree.left != null) {
-      return findClosestValueInBst(tree.left, target, closest);
-    } else if (target > tree.val && tree.right != null) {
-      return findClosestValueInBst(tree.right, target, closest);
+    if (target < node.val && node.left != null) {
+      return findClosestValueInBst(node.left, target, closest);
+    } else if (target > node.val && node.right != null) {
+      return findClosestValueInBst(node.right, target, closest);
 
     } else {
       return closest;

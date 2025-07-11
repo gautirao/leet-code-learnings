@@ -1,4 +1,4 @@
-package com.goutham.datastructures;
+package com.goutham.datastructures.heaps;
 
 import java.util.ArrayList;
 

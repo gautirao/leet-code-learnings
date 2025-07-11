@@ -121,4 +121,8 @@ public class BinaryTree {
     postOrderTraversalRecursive(node.right);
     System.out.println(node.val + "");
   }
+
+  public void depthFirstTraversal(){
+
+  }
 }
